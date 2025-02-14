@@ -24,6 +24,7 @@ import { Button } from "./ui/button";
 
 
 import { useState } from "react";
+import { UserButton } from "@clerk/nextjs";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -70,11 +71,11 @@ function Header() {
 
           {/* Login and Wishlist */}
           <div className="flex gap-2 items-center">
-            <Link href={"/login"}>Login</Link>
+            <Link href={"/product"}>Login</Link>
             <User size={16} />
           </div>
           <div className="flex gap-2 items-center">
-            <Link href={"/whishlist"}>Wishlist</Link>
+            <Link href={"/wishlist"}>Wishlist</Link>
             <Heart size={16} />
           </div>
           {/* Cart */}
@@ -83,6 +84,7 @@ function Header() {
               <ShoppingCart size={24} />
             </Link>
           </div>
+         <UserButton showName/> 
         </div>
       </div>
 
@@ -160,10 +162,10 @@ function Header() {
       <Link href={"/blog"} className="block text-sm py-2">
         Blog
       </Link>
-      <Link href={"/shop"} className="block text-sm py-2">
+      <Link href={"/shopList"} className="block text-sm py-2">
         Shop
       </Link>
-      <Link href={"/contactUs"} className="block text-sm py-2">
+      <Link href={"/contact"} className="block text-sm py-2">
         Contact
       </Link>
     </nav>

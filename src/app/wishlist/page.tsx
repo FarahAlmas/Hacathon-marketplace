@@ -13,7 +13,7 @@ import { Cart } from "@/constant/cartProduct";
 
 
 
-export default function Whishlist() {
+export default function Wishlist() {
 
 
   // State for cart items

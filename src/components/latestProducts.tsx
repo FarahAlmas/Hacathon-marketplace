@@ -1,4 +1,3 @@
-
 import { Heart, Search, ShoppingCart } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
@@ -38,7 +37,7 @@ async function LatestProducts() {
         </h2>
 
         <Tabs defaultValue="new" className="w-full">
-          <TabsList className="flex justify-center gap-2 sm:gap-4 md:gap-8 border-none bg-transparent">
+          <TabsList className="flex justify-center gap-1 sm:gap-4 md:gap-8 border-none bg-transparent">
             {['New Arrival', 'Best Seller', 'Featured', 'Special Offer'].map((tab, idx) => (
               <TabsTrigger
                 key={idx}
@@ -51,10 +50,10 @@ async function LatestProducts() {
           </TabsList>
         </Tabs>
 
-        <div className="w-full flex justify-center my-[30px] md:my-[50px]">
+        <div className="w-full flex justify-center my-[30px] md:my-[50px] rounded-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {res.cards.map((product: CardProps, index: number) => (
-              <Card key={index} className="group relative border-none">
+              <Card key={index} className="w-[90%] sm:w-[270px] h-full overflow-hidden grow-0 shrink-0 relative">
                 <div className="relative bg-[#F7F7F7] p-4 h-[300px] sm:h-[350px] flex items-center justify-center">
                   {product.sale && (
                     <div className="absolute top-4 left-4 bg-[#3F509E] text-white px-3 py-1 rotate-[-18deg] text-sm">
@@ -64,7 +63,7 @@ async function LatestProducts() {
                   <Link href="/product">
                     <Image
                       src={product.latestProductImage}
-                      alt={product.name}
+                      alt={product.latestProductName}
                       className="max-h-[200px] sm:max-h-[250px] w-auto object-contain"
                       width={223}
                       height={229}
@@ -73,15 +72,15 @@ async function LatestProducts() {
                   {/* Hover Actions */}
                   <div className="absolute left-4 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 sm:gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
                     {[
-                      <ShoppingCart />,
-                      <Heart />,
-                      <Search />,
-                    ].map((Icon, idx) => (
+                      { id: 'cart', icon: <ShoppingCart /> },
+                      { id: 'heart', icon: <Heart /> },
+                      { id: 'search', icon: <Search /> }
+                    ].map(({ id, icon }) => (
                       <button
-                        key={idx}
+                        key={id}
                         className="p-2 bg-white rounded-full hover:bg-[#2F1AC4] hover:text-white transition-colors"
                       >
-                        {Icon}
+                        {icon}
                       </button>
                     ))}
                   </div>
@@ -140,3 +139,4 @@ async function LatestProducts() {
 }
 
 export default LatestProducts;
+

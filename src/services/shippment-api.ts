@@ -18,25 +18,17 @@ return data
 //--------------------------postReq---------------
 
 interface Data {
-  to_name : string
-  to_phone: string
-  to_address: string
-  to_city: string
-  from_name: string
-  from_company: string
-  from_phone: string
-  from_address: string
-  from_city: string
-  weight_value: number
-  height: number
-  width: number
-  length: number
+  name: string
+  phone: string
+  address: string
+  city: string
 }
-  
+
+
 
 export async function postReq(item: Data) {
 
-  const {to_name, to_phone, to_address, to_city, from_name, from_company, from_phone, from_address, from_city, weight_value, height, width, length} = item
+  const {name, phone, address, city} = item
 
   const res = await fetch("https://api.shipengine.com/v1/labels",{
     method: "POST",
@@ -49,22 +41,22 @@ export async function postReq(item: Data) {
         // "se-1570529",
         "carrier_id": "se-1582672",
         "service_code": "usps_priority_mail_express",
-        "ship_to": {
-          "name": to_name,
-          "phone": to_phone,
-          "address_line1": to_address,
-          "city_locality": to_city,
+       "ship_to": {
+          "name": name,
+          "phone": phone,
+          "address_line1": address,
+          "city_locality": city,
           "state_province": "CA",
           "postal_code": "95128",
           "country_code": "US",
           "address_residential_indicator": "yes"
         },
         "ship_from": {
-          "name": from_name,
-          "company_name": from_company,
-          "phone": from_phone,
-          "address_line1": from_address,
-          "city_locality": from_city,
+          "name": "john",
+          "company_name": "Abc company",
+          "phone": "+03001234567",
+          "address_line1": "123 Main St",
+          "city_locality": "Karachi",
           "state_province": "TX",
           "postal_code": "78731",
           "country_code": "US",
@@ -73,13 +65,13 @@ export async function postReq(item: Data) {
         "packages": [
           {
             "weight": {
-              "value": weight_value,
+              "value": 20,
               "unit": "ounce"
             },
             "dimensions": {
-              "height": height,
-              "width": width,
-              "length": length,
+              "height": 12,
+              "width": 6,
+              "length": 10,
               "unit": "inch"
             }
           }

@@ -1,17 +1,17 @@
  export const Blog=[
-  { "src":"/top-blog1.png",
+  { "src":"/top-blog1.png?height=80&width=126",
     "date":"21 August, 2020",
     "heading": "Top essential Trends in 2021",
     "para":" More off this less hello samlande lied much over tightly circa horse taped mightly",
   },
 
-  { "src":"/top-blog2.png",
+  { "src":"/top-blog2.png?height=80&width=126",
     "date":"21 August, 2020",
     "heading": "Top essential Trends in 2021",
     "para":" More off this less hello samlande lied much over tightly circa horse taped mightly",
   },
 
-  { "src":"/top-blog3.png",
+  { "src":"/top-blog3.png?height=80&width=126",
     "date":"21 August, 2020",
     "heading": "Top essential Trends in 2021",
     "para":" More off this less hello samlande lied much over tightly circa horse taped mightly",
@@ -116,14 +116,14 @@ export  const blogPosts = [
 export const data=[
   {
     "id":1,
-    "image":"/blog-1 (2).png", 
+    "image":"/blog-1 (2).png?height=80&width=126", 
     "name":"Surf Auxion",
     "date":"Aug 09 2020",
     "heading":"It is a long established fact that a reader will be distracted.",
   },
   {
     "id":2,
-    "image":"/blog-1 (1).png", 
+    "image":"/blog-1 (1).png?height=80&width=126", 
     "name":"Surf Auxion",
     "date":"Aug 09 2020",
     "heading":"It is a long established fact that a reader will be distracted.",
@@ -132,7 +132,7 @@ export const data=[
   },
   {
     "id":3,
-    "image":"/blog-1 (3).png", 
+    "image":"/blog-1 (3).png?height=80&width=126", 
     "name":"Surf Auxion",
     "date":"Aug 09 2020",
     "heading":"It is a long established fact that a reader will be distracted.",

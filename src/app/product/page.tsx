@@ -1,10 +1,14 @@
 
+
 import { client } from "@/sanity/lib/client";
 // import { fetchData } from "@/services/api";
 import Heading from "@/components/heading";
 import { Heart, ShoppingCart, ZoomIn, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+
+
+
 
 
 
@@ -24,41 +28,7 @@ import Link from "next/link";
 const Page = async () => {
 
 
-  
-// // --------------process to fetch-------------------
 
-// const [cards , setCards] = useState <Res[]>([])
-// //------------------------use useEffect--------------------
-//  useEffect(()=>{
-//    const fetchCard = async ()=>{
-//      const res:Res[] = await client.fetch(`*[_type == "item"][1...10]{
-//   id,
-//   name,
-//   category,
-//     price,
-//     description,
-//     discountPercentage,
-    
-//      "image":image.asset->url
-//  }`)
-//      setCards(res)
-
-//     if(!res || res.length === 0){
-//     //  await fetchData()
-    
-//       const res:Res[] = await client.fetch(`*[_type == "item"][1...10]{
-//   id,
-//  name,
-//    price,
-//    description,
-//    discountPercentage,
-   
-//     "image":image.asset->url
-// }`)
-//       setCards(res)
-//     }}
-//     fetchCard()
-//  },[])
 
 
 
@@ -72,9 +42,10 @@ const Page = async () => {
          isFeaturedProduct,
           "image":image.asset->url
       }`)
+      
   
 
-  return (
+      return (
     <main className="mt-10 overflow-hidden">
       <Heading text={"Shop Products"} text2={"Shop Products"} />
       <div className="space-y-10 mt-20">
@@ -88,7 +59,7 @@ const Page = async () => {
   <div>
     <Image
       src={item.image}
-      alt={item.name}
+      alt={item.name ||"pic"}
       width={314}
       height={218}
       className="w-auto h-auto"

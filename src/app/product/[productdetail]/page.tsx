@@ -69,7 +69,7 @@ export default function ProductDetails() {
                 >
                   <Image
                     src={image}
-                    alt={`Product thumbnail ${index + 1}`}
+                    alt={`Product thumbnail ${index + 1} || 'pic'`}
                     fill
                     className="object-cover"
                   />
@@ -175,7 +175,7 @@ export default function ProductDetails() {
                <div className="aspect-square relative mb-4 bg-[#F6F7FB] rounded-lg overflow-hidden">
                  <Image
                    src={product.img}
-                   alt={product.title}
+                   alt={product.title || 'pic'}
                    fill
                    className="object-cover group-hover:scale-110 transition-transform"
                  />

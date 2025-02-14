@@ -45,7 +45,7 @@ export function BlogSidebar() {
        <div key={i} className="flex gap-4">
          <Image
            src={post.image}
-           alt={post.title}
+           alt={post.title || "pic"}
            width={70}
            height={51}
            className="rounded"
@@ -66,7 +66,7 @@ export function BlogSidebar() {
        <div key={i} className="flex gap-4">
          <Image
            src={product.image}
-           alt={product.title}
+           alt={product.title ||"pic"}
            width={70}
            height={57}
            className="rounded" />
@@ -87,7 +87,7 @@ export function BlogSidebar() {
        <div key={i} className="space-y-2">
          <Image
            src={product.image}
-           alt={product.title}
+           alt={product.title || "pic"}
            width={126}
            height={80}
            className="rounded w-full"

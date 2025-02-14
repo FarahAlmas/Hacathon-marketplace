@@ -4,16 +4,18 @@ import hero from './landingPage-Section/hero';
 import featuredProducts from './landingPage-Section/featuredProducts'
 import latestProduct from './landingPage-Section/latestProduct';
 import unique from './landingPage-Section/unique';
-import { newitem } from './newitem';
+import { userSchema } from './user';
+import { product } from './product';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: 
   [
     landingPage,
-    newitem,     
+    product,     
     hero,
     featuredProducts,
     latestProduct,
-    unique
+    unique,
+    userSchema
   ],
 }

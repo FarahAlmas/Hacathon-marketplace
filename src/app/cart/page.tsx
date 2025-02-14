@@ -1,6 +1,7 @@
 // "use client"
 
 import CartContent from "@/components/cartContent";
+
 import { Suspense } from "react";
 
 // import { useEffect, useState } from "react"
@@ -183,8 +184,10 @@ import { Suspense } from "react";
 //   )
 // }
 
-
 export default function CartPage() {
+
+
+  
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <CartContent />

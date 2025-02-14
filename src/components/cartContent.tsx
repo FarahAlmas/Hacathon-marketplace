@@ -11,6 +11,7 @@ import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import {  sanityUserPost } from "@/services/userApi";
 
 interface CartItem {
   name: string;
@@ -75,6 +76,12 @@ export default function CartContent() {
   const discount = isMember ? subtotal * 0.1 : 0;
   const total = subtotal - discount;
 
+  useEffect(()=>{
+   sanityUserPost()
+  },[])
+  
+  
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Your Cart</h1>
@@ -86,7 +93,7 @@ export default function CartContent() {
                 <div className="flex items-center">
                   <Image
                     src={item.image}
-                    alt={item.name}
+                    alt={item.name || "pic"}
                     width={80}
                     height={80}
                     className="w-20 h-20 object-cover rounded mr-4"
@@ -161,7 +168,7 @@ export default function CartContent() {
               </div>
             </CardContent>
             <CardFooter>
-              <Link href={"/shipping"}>
+              <Link href={"/checkout"}>
                 <Button className="w-full">
                   {isMember ? "Member Checkout" : "Proceed to Checkout"}
                 </Button>

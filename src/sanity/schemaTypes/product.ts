@@ -1,4 +1,4 @@
-export const newitem = {
+export const product= {
   name: 'item',
   type: 'document',
   title: 'Item',

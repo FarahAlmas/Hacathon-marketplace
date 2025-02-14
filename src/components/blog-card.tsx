@@ -3,16 +3,7 @@ import Link from "next/link"
 import { CalendarIcon, Pen } from 'lucide-react'
 import {  data } from "@/constant/blog"
 
-// interface BlogCardProps {
-//   image: string
-//   title: string
-//   excerpt: string
-//   author: string
-//   date: string
-// }
 
-// export function BlogCard({ image, title, excerpt, author, date }: BlogCardProps) {
-//   return (
 export function BlogCard(){
   return(
     <article className="mb-16">
@@ -20,7 +11,7 @@ export function BlogCard(){
         <> <Link key={item.id} href={`/blog/${item.id-1}`}>
         <Image
          src={item.image}
-         alt={item.name}
+         alt={item.name || "pic"}
          width={870}
          height={453}
          className="rounded-lg mb-6" key={index} />
